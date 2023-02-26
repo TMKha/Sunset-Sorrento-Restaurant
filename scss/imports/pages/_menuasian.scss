@@ -1,0 +1,36 @@
+.menuasian{
+    --fs:72px;
+    .menuasian-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        gap: 52px;
+        padding-bottom: 80px;
+    }
+    &__card{
+        position: relative;
+        &-img{
+            overflow: hidden;
+            img{
+                object-fit: cover;
+            }
+        }
+        .textbox{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+           
+        }
+        
+    }
+    .btn-blue{
+        margin: 0 auto;
+    }
+    @include sm{
+        .menuasian-wrapper{
+            grid-template-columns: 1fr;
+        }
+    }
+   
+}

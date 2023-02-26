@@ -1,0 +1,89 @@
+// css footer
+footer{
+    --fs:24px;
+    .container-fluid{
+    background-color: #090C0F;
+    }
+    .infor{
+        padding: 100px 0;
+        display: flex;
+        justify-content: space-between;
+        &__contacts{
+          &-content{
+            .text{
+                display: flex;
+                &:not(:last-child){
+                    padding-bottom: 20px;
+                }
+                &__icon{
+                    padding-right: 16px;
+                }
+            }
+          }
+        }
+        &__social{
+            text-align: center;
+            &-desc{
+                padding-top: 35px;
+                padding-bottom: 30px;
+                max-width: 390px;
+                @include text(var(--fs), ci, 40px, $white-cl, none);
+            }
+            &-list{
+                display: flex;
+                justify-content: center;
+                .icon-social{
+                    margin: 0 12px;
+                    border-radius: 50%;
+                    border: 1px solid $white-cl;
+                    height: 32px;
+                    width: 32px;
+                    @include mid(true);
+
+                }
+            }
+        }
+        &__open{
+            &-time{
+                &:not(:last-child){
+                    padding-bottom: 16px;
+                }
+                span{
+                    color: $yellow-cl;
+                }
+            }
+        }
+        .title-footer{
+            @include text(var(--fs),osl,40px,$white-cl,none);
+            margin-bottom:24px;
+            display: block;
+        }
+    }
+    .bottom{
+        padding-top: 25px;
+        padding-bottom: 25px;
+        text-align: center;
+    }
+    @include sm{
+        padding: 80px 0;
+        --fs:20px;
+    }
+    @include xs{
+        --fs:18px;
+        padding: 60px 0;
+
+        .infor{
+            flex-direction: column;
+            &__social{
+            text-align: initial;
+                &-desc{
+                    padding: 10px 0;
+                    max-width: initial;
+                }
+                &-list{
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+}

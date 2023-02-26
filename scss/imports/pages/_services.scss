@@ -1,0 +1,338 @@
+.bestservices{
+    .container{
+        position: relative;
+    }
+    &__slider{
+        padding-top: 80px;
+        &-page{
+            position: relative;
+            margin-right: 54px;
+            .title{
+                position: absolute;
+                left: 50%;
+                top:50%;
+                transform: translate(-50%,-50%);
+                @include text(40px,osl,54px,$white-cl,none)
+            }
+        }
+        .flickity-page-dots{
+            .dot{
+            display: inline-block;
+            width: 62px;
+            height: 1px;
+            background: $yellow-cl;
+            opacity: 0.25;
+            cursor: pointer;
+            margin: initial;
+            border-radius: initial;
+            @include transition(0.3s);
+                 &.is-selected{
+                    height: 3px;
+                    opacity: 1;
+            @include transition(0.3s);
+
+                 }
+            }
+        }
+    }
+}
+.benefits{
+    --fs:72px;
+    .container{
+        position: relative;
+    }
+    .benefits-wrapper{
+        display: flex ;
+    }
+    &__infor{
+        flex: 1;
+        margin-right: 120px;
+        &-bottom{
+        padding-top: 88px;
+            .content{
+                display: flex;
+                &:not(:last-child){
+                    padding-bottom: 48px;
+                }
+                i{
+                    margin-right: 22px;
+                    img{
+                        max-width: initial;
+                    }
+                }
+            }
+        }
+    }
+    &__thumnail{
+        width: 50%;
+        position: relative;
+        &-img{
+            position: relative;
+            img{
+                object-fit: cover;
+            }
+            .circle{
+                z-index: 1;
+                position: absolute;
+                bottom: -20%;
+                right: -8%;
+                overflow: hidden;
+            }
+        }
+        &-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .desc{
+                text-align: center;
+                padding-bottom: 40px;
+                &__heading{
+                    width: max-content;
+                    padding-bottom: 16px;
+                    @include text(var(--fs),csbi,normal,$white-cl,none);
+                }
+                &__para{
+                    @include text(24px,osl,40px,$white-cl,none);
+                }
+            }
+        }
+    }
+    @include sm{
+        --fs:60px;
+        .benefits-wrapper{
+            flex-direction: column-reverse;
+        }
+        &__thumnail{
+            width: initial;
+            &-img{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+                .circle{
+                   width: 25%;
+                   bottom: -5%;
+                   right: -5%;
+                }
+            }
+        }
+        &__infor{
+            padding-top: 60px;
+            margin-right: 80px;
+            &-bottom{
+                padding-top: 20px;
+                .content{
+                    &:not(:last-child){
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+    @include xs{
+        --fs:40px;
+        &__infor{
+            margin-right: 40px;
+        }
+    }
+   
+
+}
+.statistics{
+    .statistics-wrapper{
+        display: flex;
+        justify-content: space-around;
+
+    }
+    &__content{
+        &-number{
+            padding-bottom: 8px;
+            @include text(60px,osl,normal,$yellow-cl,none)
+        }
+        
+    }
+    @include xs{
+        .statistics-wrapper{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__content{
+            text-align: center;
+            &:not(:last-child){
+                margin-top: 20px;
+            }
+        }
+    }
+}
+.pricing{
+    background-color: #151B20;
+    position: relative;
+    --fs:240px;
+    --let-spacing:35px;
+    .textbox{
+        position: relative;
+        z-index: 0;
+       .text-price{
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            span{
+                letter-spacing: var(--let-spacing);
+                @include text(var(--fs),osl,normal,#0E1317,uppercase)
+            }
+       } 
+    }
+    &__list{
+        margin-bottom: calc( 0px - var(--space));
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 24px;
+        padding-top: 130px;
+        &-plan{
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            align-items: center;
+            border: 1px solid $yellow-cl;  
+            text-align: center;
+            background-color: #0E1317;
+            &.--diamon{
+                background-color: #000000;
+                margin-top: -20px;
+                margin-bottom: -20px;
+                background-image: url(/img/dichvu-right-diamon.svg) ;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }        
+            .top{
+                &__price{
+                    &-money{
+                        @include text(60px,osl,normal,$yellow-cl,none);
+                        display:block;
+                    }
+                    &-person{
+                        color: $yellow-cl;
+                    }
+                }
+            }
+            .content{
+                padding-bottom: 40px;
+                &__para{
+                    @include text(24px,osl,40px,$white-cl,none)
+                }
+            }
+        }
+        .line{
+            padding-top:40px ;
+            padding-bottom: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                &::after,
+                &::before {
+                    content: "";
+                    width: 50%;
+                    height: 1px;
+                    background-color: $yellow-cl;
+                    display: block;
+                }
+                    .square {
+                        height: 13px;
+                        width: 13px;
+                        border: 0.5px solid $yellow-cl;
+                        position: relative;
+                        transform: rotate(45deg);
+
+                        &::after {
+                            content: "";
+                            width: 10px;
+                            height: 10px;
+                            background-color: $yellow-cl;
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    
+                    }
+
+        }
+    }
+    @include sm{
+         --fs:180px;
+         --let-spacing:30px;
+        
+    }
+    @include sm{
+        --fs:100px;
+        --let-spacing:20px;
+        &__list{
+            grid-template-columns: 1fr;
+           :nth-child(even){
+                margin-top: 20px;
+                margin-bottom: 20px;
+           }
+            &-plan{
+                .top__price-money{
+                    font-size: 40px;
+                }
+            }
+        }
+   }
+
+}
+.philosophy{
+    .container-fluid{
+        max-width: 1320px;
+        padding: 0;
+    }
+    &.pd{
+        padding-top: var(--space);
+    }
+    .philosophy-wrapper{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &__center{
+        padding-left: 30px;
+        padding-right: 30px;
+        .textbox{
+           
+            &__desc{
+                padding-top: 70px;
+                &-para{
+                    padding-bottom: 24px;
+
+                }
+            }
+        }
+        &-bottom{
+            display: flex;
+            justify-content: center;
+        }
+    }
+    @include sm{
+        
+        &__img{
+            display: none;
+        }
+        &__center{
+            .textbox{
+                max-width: initial;
+                &__desc{
+                max-width: initial;
+                padding-top: initial;
+                }
+            }
+        }
+       
+    }
+}

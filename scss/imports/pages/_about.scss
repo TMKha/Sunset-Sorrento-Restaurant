@@ -1,0 +1,165 @@
+.restaurant{
+    --fs:72px;
+    --fs-title:40px;
+    .container{
+        display: flex;
+    }
+    &__img{
+        width: 50%;
+        margin-right: 120px;
+        overflow: hidden;
+        img{
+            object-fit: cover;
+        }
+    }
+    &__content{
+        flex: 1;
+        &-heading{
+            @include text(var(--fs),osl,80px,$white-cl,none);
+        }
+        &-desc{
+            padding-top: 50px;
+            padding-bottom: 40px;
+            
+        }
+        &-bottom{
+            display: flex;
+            .award{
+                flex-basis: 40%;
+                &__title{
+                    @include text(var(--fs-title),osl,normal,$white-cl,none)
+                }
+                &__list{
+                    display: flex;
+                    flex-direction: column;
+                    &-link{
+                        display: block;
+                    }
+                    // &-link{
+                    //     &::after{
+                    //         content: "";
+                    //         height: 1px;
+                    //         background-color: $white-cl;
+                    //         margin-top: 2px;
+                    //         display: block;
+                    //         width: 100%;
+                    //     }
+                    // }
+                   
+                }
+            }
+            .contact{
+                flex-basis: 60%;
+                padding-left: 55px;
+                &__title{
+                    @include text(var(--fs-title),osl,normal,$white-cl,none)
+                }
+                &__method{
+                    &-text{
+                        display: block;
+                        color: $white-cl;
+                        span{
+                            font-family: msb;
+                        }
+                    }
+                }
+                &__social{
+                    padding-top: 45px;
+                    display: flex;
+                    &-icon{
+                        height: 32px;
+                        width: 32px;
+                        border-radius: 50%;
+                        border: 1px solid $white-cl;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &:not(:last-child)
+                        {
+                            margin-right: 24px;
+                        }
+                       
+                    }
+                }
+            }
+        }
+       
+
+    }
+    @include sm{
+       .container{
+        flex-direction: column-reverse;
+       }
+       .restaurant__img{
+        margin-top: 30px;
+        width: initial;
+       }
+       
+    }
+    @include xs{
+      --fs:60px;
+      --fs-title:24px;
+      .restaurant__content-bottom{
+        flex-direction: column-reverse;
+            .contact{
+                padding-left: initial;
+                &__social{
+                    padding-top: initial;
+                }
+            }
+      }
+           
+    }
+}
+.destination{
+    &__img{
+        overflow: hidden;
+        img{
+            object-fit: cover;
+        }
+    }
+}
+.core{
+    padding-bottom: 120px;
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 24px;
+
+        &-text{
+            display: flex;
+            .symbol{
+                margin-top: 24px;
+            }
+            .right{
+                padding-left: 24px;
+                max-width: 280px;
+                &__name{
+                    padding-bottom: 8px;
+                    @include text(24px,osl,40px,$white-cl,none)
+                }
+
+            }
+        }
+    }
+    @include sm{
+        .core__list{
+        grid-template-columns: 1fr;
+            &-text{
+                .right{
+                    max-width: initial;
+                }
+            }
+        }
+    }
+    @include xs{
+        .core__list-text{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .right{
+                text-align: center;
+            }
+        }
+    }
+}

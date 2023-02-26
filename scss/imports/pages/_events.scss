@@ -1,0 +1,26 @@
+.events{
+    .events-wrapper{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,1fr);
+        gap: 24px;
+        padding-bottom: 64px;
+    }
+    .btn-blue{
+        margin: 0 auto;
+    }
+    @include sm{
+        .events-wrapper{
+            grid-template-columns: repeat(2,1fr);
+            padding-bottom: 40px;
+        }
+        
+    }
+    @include xs{
+        .events-wrapper{
+            grid-template-columns: 1fr;
+            padding-bottom: 40px;
+        }
+        
+    }
+}

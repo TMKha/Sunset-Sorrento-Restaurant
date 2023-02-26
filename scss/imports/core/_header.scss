@@ -1,0 +1,202 @@
+// css header
+header {
+    height: var(--height-header);
+    width: 100%;
+    z-index: 300;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .container-fluid{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menu{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            &__list{
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &-item{
+                    a{
+                        @include text(14px, osr ,20px,$white-cl,none);
+                        padding: 0 12px;
+                        @include transition(0.3s);
+                        &:hover{
+                            color: $yellow-cl;
+                        }
+                        &.active{
+                            color: $yellow-cl;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .lang{
+            position: relative;
+            display: flex;
+            align-items: center;
+            &__current{
+                &-text{
+                    padding: 0 40px;
+                    @include text(14px,osr,20px,$white-cl,none);
+                     cursor: pointer;
+                }
+       
+           
+            }
+            &.active{
+                .lang__select{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }  
+            &__select{
+                opacity: 0;
+                visibility: hidden;
+                z-index: 20;
+                position: absolute;
+                @include mid(true);
+                flex-direction: column;
+                width: 100px;
+                height: auto;
+                background-color: $black-cl;
+                top: 75px;
+                text-align: right;
+                a{
+                    text-align: center;
+                    padding: 12px 0;
+                    width: 100%;
+                    @include text(14px, osr ,20px,$white-cl,none);
+                    border-bottom: 1px solid $black-cl;
+                }   
+            }
+            .btnmenu{
+                display: none;
+                cursor: pointer;
+                width: 40px;
+                height: 20px;
+                position: relative;
+                z-index: 300;
+                span{
+                    width: 100%;
+                    height: 2px;
+                    background: #bea67c;
+                    display: block;
+                    position: absolute;
+                    bottom: 50%;
+                    @include transition(0.4s)
+                }
+                &::before{
+                    content: "";
+                    height: 2px;
+                    background-color: #bea67c;
+                    width: 100%;
+                    display: block;
+                }
+                &::after{
+                    content: "";
+                    height: 2px;
+                    background-color: #bea67c;
+                    width: 100%;
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                }
+                &::after{
+                    transform: rotate(0deg);
+                    
+                }
+                &::before{
+                    transform: rotate(0deg);
+                }
+                &.active{
+                    &::after{
+                     transform: rotate(-45deg) translate(9px,-4px);
+                    @include transition(0.4s);
+    
+                    }
+                    span {
+    
+                        opacity: 0;
+                    }
+                    &::before{
+                        transform: rotate(45deg) translate(9px,4px);
+                    @include transition(0.4s);
+    
+                    }
+                }
+    
+              
+            }
+        }
+        .nav{
+
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 200;
+            @include transform(initial);
+            background: $black-cl;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(0.4s);
+            ul{
+                @include mid(true);
+                    flex-direction: column;
+                    height: 100%;
+                li{
+                    margin: 15px auto;
+                    a{
+                        color: $white-cl;
+                        text-align: center;
+                    }
+                }
+            }
+            &.active{
+                visibility: visible;
+                opacity: 1;
+            }
+
+        }
+  
+    }
+    @include sm{
+     .container-fluid{
+        .menu{
+            display: none;
+        }
+        .lang{
+
+            .btnmenu{
+                display: block;
+                margin-left: 20px;
+            }
+        }
+        }
+    }
+    @include xs{
+        .container-fluid{
+            .lang{
+                .lang__current{
+                    .lang__current-text{
+                      padding: 0 10px;
+                    }
+                    .btn-yl{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+// scroll >200 thì thêm class header và đổi màu đen
+.header{
+    background: #0E1317;
+}

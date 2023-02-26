@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'cbi';
+    src: url('../fonts/Cormorant-BoldItalic.woff2') format('woff2'),
+        url('../fonts/Cormorant-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'csbi';
+    src: url('../fonts/Cormorant-SemiBoldItalic.woff2') format('woff2'),
+        url('../fonts/Cormorant-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+
+
+@font-face {
+    font-family: 'cl';
+    src: url('../fonts/Cormorant-Light.woff2') format('woff2'),
+        url('../fonts/Cormorant-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ci';
+    src: url('../fonts/Cormorant-RegularItalic.woff2') format('woff2'),
+        url('../fonts/Cormorant-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'msr';
+    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('../fonts/Montserrat-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'osl';
+    src: url('../fonts/Oswald-Light.woff2') format('woff2'),
+        url('../fonts/Oswald-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'osr';
+    src: url('../fonts/Oswald-Regular.woff2') format('woff2'),
+        url('../fonts/Oswald-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+
+
+
+

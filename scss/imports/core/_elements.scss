@@ -1,0 +1,46 @@
+.btn-yl{
+    @include text(14px,osr,20px,$white-cl,none);
+    background-color:$yellow-cl;
+    width: max-content;
+    padding: 18px 53px;
+    height: 52px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @include transition(0.3s);
+    &:hover{
+        color: $black-cl;
+        background-color: $white-cl;
+    }
+}
+.btn-blue{
+    z-index: 10;
+    @include text(14px,osr,20px,$white-cl,none);
+    padding: 22px 60px;
+    height: 62px;
+    width: max-content;
+    border: 1px solid $yellow-cl;
+    @include mid(true);
+    position: relative;
+    @include transition(0.3s);
+    &::after{
+        content: "";
+        display: block;
+        width: 98%;
+        height: 96%;
+        background: $blue-cl;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        position: absolute;
+        z-index: -1;
+        @include transition(0.3s);
+    }
+    &:hover{
+        &::after{
+            background: $yellow-cl;
+
+        }
+    }
+} 
+

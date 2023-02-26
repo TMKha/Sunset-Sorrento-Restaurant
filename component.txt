@@ -1,0 +1,3 @@
+- text box 
+- box post
+- btn- khám phá

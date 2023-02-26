@@ -1,0 +1,7 @@
+những việc cần tiếp theo cho dự án
+- chỉnh lại pd theo cái section place
+- code try our special offers
+- sửa lại cái form
+- làm hình thôi cho post
+- gắn 2 hình 2 bên cho menu
+- khi text dài thì ...

@@ -1,0 +1,9 @@
+.service-wrapper{
+    width: 100%;
+    padding-right: 200px;
+    padding-left: 200px;
+    @include sm{
+            padding-left: initial;
+            padding-right: initial;
+    }
+}
